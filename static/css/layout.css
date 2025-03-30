@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f3f3; /* Light pastel background */
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #a8dadc; /* Pastel blue */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+/* Main Content Styling */
+main {
+    padding: 40px 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f1faee; /* Pastel cream */
+    color: #333;
+    text-align: center;
+    padding: 15px;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Block for content */
+.content {
+    background-color: #e0fbfc; /* Light teal */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Links */
+a {
+    color: #d4a5a5; /* Soft pinkish pastel */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffadad; /* Light coral pink */
+    text-decoration: underline;
+}
+
+/* Add some padding and spacing */
+h2, p {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    /* Adjust layout for mobile */
+    table {
+        font-size: 0.9rem;
+        overflow-x: auto;
+        display: block;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    th, td {
+        white-space: nowrap;
+        word-wrap: break-word;
+    }
+}

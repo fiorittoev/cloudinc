@@ -1,0 +1,53 @@
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #a8dadc; /* Pastel blue for table header */
+    color: #fff;
+    font-size: 1rem;
+}
+
+td {
+    background-color: #f1faee; /* Pastel cream for table rows */
+    color: #4a4a4a;
+    font-size: 0.95rem;
+}
+
+/* Hover Effect for Table Rows */
+tr:hover {
+    background-color: #e0fbfc; /* Light teal hover effect */
+}
+
+/* Header for the Content */
+h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}

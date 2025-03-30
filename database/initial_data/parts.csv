@@ -1,0 +1,11 @@
+part_id,part_name,part_cost,part_manufacturer
+P001,Rocket Engine,15000.00,SpaceX
+P002,Thermal Shield,5000.00,NASA
+P003,Fuel Tank,8000.00,Blue Origin
+P004,Navigation System,12000.00,Lockheed Martin
+P005,Rocket Booster,10000.00,SpaceX
+P006,Landing Gear,3500.00,Boeing
+P007,Control Module,4000.00,NASA
+P008,Solar Panel Array,2500.00,Blue Origin
+P009,Communication System,6000.00,Lockheed Martin
+P010,Launch Pad,12000.00,Boeing

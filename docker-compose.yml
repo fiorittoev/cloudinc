@@ -7,7 +7,7 @@ services:
       - "5000:5000"
     environment:
       - FLASK_ENV=production
-      - SQLALCHEMY_DATABASE_URI=mysql+pymysql://admin:your_password@your-rds-endpoint.amazonaws.com/my_database
+      - SQLALCHEMY_DATABASE_URI=mysql+pymysql://admin:MI361isfun@database-1.cxsaq0qa4oil.us-east-2.rds.amazonaws.com/parts
     depends_on:
       - db
 
@@ -17,9 +17,9 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: my_database
+      MYSQL_DATABASE: parts
       MYSQL_USER: admin
-      MYSQL_PASSWORD: your_password
+      MYSQL_PASSWORD: MI361isfun
     networks:
       - app_network
 
