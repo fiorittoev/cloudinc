@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+import routes
 
 # Initialize the Flask app
 app = Flask(__name__)
 
 # RDS Database configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://admin:your_password@your-rds-endpoint.amazonaws.com/my_database'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialize the database
 db = SQLAlchemy(app)

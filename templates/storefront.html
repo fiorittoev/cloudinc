@@ -1,5 +1,25 @@
 {% extends 'shared/layout.html' %}
 
 {% block content %}
-<h2>Welcome!</h2>
+    <h2>Welcome! Here are all the parts:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Part ID</th>
+                <th>Part Name</th>
+                <th>Part Cost</th>
+                <th>Part Manufacturer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for part in parts %}
+                <tr>
+                    <td>{{ part[0] }}</td>
+                    <td>{{ part[1] }}</td>
+                    <td>{{ part[2] }}</td>
+                    <td>{{ part[3] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
