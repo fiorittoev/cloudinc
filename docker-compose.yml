@@ -7,22 +7,19 @@ services:
       - "5000:5000"
     environment:
       - FLASK_ENV=production
-      - SQLALCHEMY_DATABASE_URI=mysql+pymysql://admin:MI361isfun@database-1.cxsaq0qa4oil.us-east-2.rds.amazonaws.com/parts
+      - MYSQL_HOST=db
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=MI361isfun
+      - MYSQL_DATABASE=database-1
     depends_on:
       - db
-
+   
   db:
     image: mysql:5.7
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: parts
+      MYSQL_ROOT_PASSWORD: V!zUG2tag!Rc
+      MYSQL_DATABASE: database-1
       MYSQL_USER: admin
       MYSQL_PASSWORD: MI361isfun
-    networks:
-      - app_network
-
-networks:
-  app_network:
-    driver: bridge

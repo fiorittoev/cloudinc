@@ -8,7 +8,7 @@ def create_connection():
     try:
         conn = mysql.connector.connect(
             host="database-1.cxsaq0qa4oil.us-east-2.rds.amazonaws.com",  # Change this to your RDS endpoint
-            database="parts",           # Database name
+            database="database-1",           # Database name
             user="admin",                    # RDS username
             password="MI361isfun"                 # RDS password
         )
@@ -71,7 +71,24 @@ def load_parts_from_csv(conn, csv_file):
     except Exception as e:
         print(f"Error reading CSV file: {e}")
 
-
+# Function to fetch parts from the database
+def fetch_parts(conn):
+    """Fetch all parts from the parts table."""
+    try:
+        cursor = conn.cursor(dictionary=True)  # Return results as dictionaries
+        sql_query = """
+        SELECT part_id, part_name, part_cost, part_manufacturer 
+        FROM parts;
+        """
+        cursor.execute(sql_query)
+        parts = cursor.fetchall()
+        cursor.close()
+        print(f"Retrieved {len(parts)} parts from database.")
+        return parts
+    except Error as e:
+        print(f"Error fetching parts: {e}")
+        return []
+    
 # Function to close the connection
 def close_connection(conn):
     """Close the database connection."""
