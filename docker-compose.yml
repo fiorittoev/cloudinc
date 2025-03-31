@@ -1,4 +1,4 @@
-version: '3'
+version: "3.8"
 
 services:
   flask-app:
@@ -7,13 +7,15 @@ services:
       - "5000:5000"
     environment:
       - FLASK_ENV=production
-      - MYSQL_HOST=db
+      - MYSQL_HOST=database-1.cxsaq0qa4oil.us-east-2.rds.amazonaws.com
       - MYSQL_USER=admin
       - MYSQL_PASSWORD=MI361isfun
       - MYSQL_DATABASE=database-1
     depends_on:
       - db
-   
+    networks:
+      - app-network
+
   db:
     image: mysql:5.7
     ports:
@@ -23,3 +25,9 @@ services:
       MYSQL_DATABASE: database-1
       MYSQL_USER: admin
       MYSQL_PASSWORD: MI361isfun
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
