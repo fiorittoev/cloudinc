@@ -14,10 +14,10 @@
         <tbody>
             {% for part in parts %}
                 <tr>
-                    <td>{{ part[0] }}</td>
-                    <td>{{ part[1] }}</td>
-                    <td>{{ part[2] }}</td>
-                    <td>{{ part[3] }}</td>
+                    <td>{{ part['part_id'] }}</td>
+                    <td>{{ part['part_name'] }}</td>
+                    <td>{{ part['part_cost'] }}</td>
+                    <td>{{ part['part_manufacturer'] }}</td>
                 </tr>
             {% endfor %}
         </tbody>

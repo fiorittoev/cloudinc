@@ -8,9 +8,9 @@ def create_connection():
     try:
         conn = mysql.connector.connect(
             host="database-1.cxsaq0qa4oil.us-east-2.rds.amazonaws.com",  # Change this to your RDS endpoint
-            database="database-1",           # Database name
             user="admin",                    # RDS username
-            password="MI361isfun"                 # RDS password
+            password="MI361isfun",                 # RDS password
+            database="db"
         )
         if conn.is_connected():
             print("Connected to MySQL RDS database")
@@ -26,15 +26,14 @@ def create_table(conn):
         cursor = conn.cursor()
         sql_create_table = """
         CREATE TABLE IF NOT EXISTS parts (
-            part_id           TEXT NOT NULL PRIMARY KEY,
+            part_id           VARCHAR(255) NOT NULL PRIMARY KEY, 
             part_name         TEXT NOT NULL,
             part_cost         FLOAT NOT NULL,
             part_manufacturer TEXT NOT NULL
-        );
-        """
+        );"""
         cursor.execute(sql_create_table)
 
-        load_parts_from_csv(conn, '../database/initial_data/parts.csv')  # Make sure the CSV file is in the correct path
+        load_parts_from_csv(conn, '//database/initial_data/parts.csv')  # Make sure the CSV file is in the correct path
         conn.commit()
 
         print("Table created successfully.")

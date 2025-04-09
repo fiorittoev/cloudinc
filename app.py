@@ -9,7 +9,7 @@ import time
 app = Flask(__name__)
 
 # RDS Database configuration using mysql-connector instead of pymysql
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://admin:MI361isfun@database-1.cxsaq0qa4oil.us-east-2.rds.amazonaws.com/database-1'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://admin:MI361isfun@database-1.cxsaq0qa4oil.us-east-2.rds.amazonaws.com'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -32,7 +32,7 @@ def connect_to_db():
 connect_to_db()
 conn = data.create_connection()
 data.create_table(conn)
-data.load_parts_from_csv(conn, './database/parts.csv')
+data.load_parts_from_csv(conn, './database/initial_data/parts.csv')
 
 @app.route('/')
 def index():

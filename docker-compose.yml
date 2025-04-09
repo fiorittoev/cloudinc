@@ -8,7 +8,7 @@ services:
       - MYSQL_HOST=database-1.cxsaq0qa4oil.us-east-2.rds.amazonaws.com
       - MYSQL_USER=admin
       - MYSQL_PASSWORD=MI361isfun
-      - MYSQL_DATABASE=database-1
+      - MYSQL_DATABASE=db
     networks:
       - app-network
 
