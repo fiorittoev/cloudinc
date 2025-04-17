@@ -1,0 +1,28 @@
+{% extends "./shared/layout.html" %}
+
+{% block content %}
+<div class="welcome-section">
+    <h2>Welcome to CLOUD Inc.</h2>
+    <p>Where you can by rocket parts!</p>
+    
+    {% if 'username' in session %}
+        <p>Welcome back, {{ session['username'] }}!</p>
+    {% else %}
+        <p>Please <a href="{{ url_for('login') }}">login</a> to access your account or <a href="{{ url_for('register') }}">register</a> if you're new.</p>
+    {% endif %}
+</div>
+
+<div class="featured-parts">
+    <h3>Featured Parts</h3>
+    <div class="parts-grid">
+        {% for part in parts[:3] %}
+            <div class="part-card">
+                <h4>{{ part[1] }}</h4>
+                <p>{{ part[3] }}</p>
+                <p class="price">${{ part[2] }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <p><a href="{{ url_for('products') }}">View all products</a></p>
+</div>
+{% endblock %}

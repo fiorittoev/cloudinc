@@ -1,0 +1,18 @@
+{% extends "shared/layout.html" %}
+
+{% block content %}
+<div class="products-container">
+    <h2>Rocket Parts</h2>
+    
+    <div class="parts-grid">
+        {% for part in parts %}
+            <div class="part-card">
+                <h3>{{ part[1] }}</h3>
+                <p>{{ part[3] }}</p>
+                <p class="price">${{ part[2] }}</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

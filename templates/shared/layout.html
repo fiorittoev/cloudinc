@@ -4,17 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Rocketship Parts Store</title>
+    <title>CLOUD Inc.</title>
+    <style>
+        
+    </style>
 </head>
 <body>
     <header>
-        <h1>Rocketship Parts Store</h1>
+        <h1>CLOUD Inc</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('products') }}">Products</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                
+                <!-- Login/Logout tabs based on user state -->
+                {% if 'username' in session %}
+                    <li class="nav-right"><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a href="{{ url_for('account') }}">My Account</a></li>
+                {% else %}
+                    <li class="nav-right"><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
     </header>
-
+    
+    <!-- Flash messages section -->
+    {% if get_flashed_messages() %}
+    <div class="flash-messages">
+        {% for category, message in get_flashed_messages(with_categories=true) %}
+            <div class="flash-message flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
     <main>
         {% block content %}{% endblock %}
     </main>
-
+    
     <footer>
         <p>&copy; 2025 All rights reserved.</p>
     </footer>
